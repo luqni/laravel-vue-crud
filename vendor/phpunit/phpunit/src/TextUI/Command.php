@@ -12,25 +12,25 @@ namespace PHPUnit\TextUI;
 
 use File_Iterator_Facade;
 use PharIo\Manifest\ApplicationName;
+use PharIo\Manifest\Exception as ManifestException;
 use PharIo\Manifest\ManifestLoader;
 use PharIo\Version\Version as PharIoVersion;
-use PharIo\Manifest\Exception as ManifestException;
 use PHPUnit\Framework\Exception;
-use PHPUnit\Framework\TestSuite;
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestListener;
+use PHPUnit\Framework\TestSuite;
 use PHPUnit\Runner\PhptTestCase;
 use PHPUnit\Runner\StandardTestSuiteLoader;
-use PHPUnit\Runner\Version;
 use PHPUnit\Runner\TestSuiteLoader;
+use PHPUnit\Runner\Version;
 use PHPUnit\Util\Configuration;
 use PHPUnit\Util\ConfigurationGenerator;
 use PHPUnit\Util\Fileloader;
 use PHPUnit\Util\Filesystem;
 use PHPUnit\Util\Getopt;
 use PHPUnit\Util\Log\TeamCity;
-use PHPUnit\Util\TestDox\TextResultPrinter;
 use PHPUnit\Util\Printer;
+use PHPUnit\Util\TestDox\TextResultPrinter;
 use PHPUnit\Util\TextTestListRenderer;
 use PHPUnit\Util\XmlTestListRenderer;
 use ReflectionClass;
@@ -1036,6 +1036,7 @@ Code Coverage Options:
   --coverage-xml <dir>        Generate code coverage report in PHPUnit XML format.
   --whitelist <dir>           Whitelist <dir> for code coverage analysis.
   --disable-coverage-ignore   Disable annotations for ignoring code coverage.
+  --no-coverage               Ignore code coverage configuration.
 
 Logging Options:
 
@@ -1101,7 +1102,6 @@ Configuration Options:
   --bootstrap <file>          A "bootstrap" PHP file that is run before the tests.
   -c|--configuration <file>   Read configuration from XML file.
   --no-configuration          Ignore default configuration file (phpunit.xml).
-  --no-coverage               Ignore code coverage configuration.
   --no-logging                Ignore logging configuration.
   --no-extensions             Do not load PHPUnit extensions.
   --include-path <path(s)>    Prepend PHP's include_path with given path(s).

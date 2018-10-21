@@ -28,9 +28,6 @@ use Symfony\Component\CssSelector\XPath\XPathExpr;
  */
 class HtmlExtension extends AbstractExtension
 {
-    /**
-     * @param Translator $translator
-     */
     public function __construct(Translator $translator)
     {
         $translator
@@ -67,8 +64,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateChecked(XPathExpr $xpath)
@@ -81,8 +76,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateLink(XPathExpr $xpath)
@@ -91,8 +84,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateDisabled(XPathExpr $xpath)
@@ -122,8 +113,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateEnabled(XPathExpr $xpath)
@@ -160,9 +149,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr    $xpath
-     * @param FunctionNode $function
-     *
      * @return XPathExpr
      *
      * @throws ExpressionErrorException
@@ -172,10 +158,7 @@ class HtmlExtension extends AbstractExtension
         $arguments = $function->getArguments();
         foreach ($arguments as $token) {
             if (!($token->isString() || $token->isIdentifier())) {
-                throw new ExpressionErrorException(
-                    'Expected a single string or identifier for :lang(), got '
-                    .implode(', ', $arguments)
-                );
+                throw new ExpressionErrorException('Expected a single string or identifier for :lang(), got '.implode(', ', $arguments));
             }
         }
 
@@ -189,8 +172,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateSelected(XPathExpr $xpath)
@@ -199,8 +180,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateInvalid(XPathExpr $xpath)
@@ -209,8 +188,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateHover(XPathExpr $xpath)
@@ -219,8 +196,6 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-     * @param XPathExpr $xpath
-     *
      * @return XPathExpr
      */
     public function translateVisited(XPathExpr $xpath)

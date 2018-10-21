@@ -14,7 +14,7 @@
             <li  class="active"><router-link :to="{name: 'indexCompany'}" >Companies</router-link></li>  
         </ol>
         <div class="panel panel-default">
-            <div class="panel-heading">Companies</div>
+            <div class="panel-heading">tes/div>
 
             <div class="panel-body">
 
