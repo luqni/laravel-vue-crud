@@ -11,10 +11,10 @@
  <div class="row">
     <div class="col-md-8 col-md-offset-2">
          <ol class="breadcrumb">
-            <li  class="active"><router-link :to="{name: 'indexCompany'}" >Companies</router-link></li>  
+            <li  class="active"><router-link :to="{name: 'indexCompany'}" >List Buku</router-link></li>  
         </ol>
         <div class="panel panel-default">
-            <div class="panel-heading">tes/div>
+            <div class="panel-heading">List Buku/div>
 
             <div class="panel-body">
 
@@ -122,7 +122,7 @@ export default {
         },
          alert(pesan) {
           this.$swal({
-            title: "Berhasil Menghapus Company!",
+            title: "Berhasil Menghapus List Buku!",
             text: pesan,
             icon: "success",
           });
