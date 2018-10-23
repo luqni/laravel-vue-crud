@@ -117,7 +117,7 @@ export default {
           })
           .catch(function (resp) {
             console.log(resp);
-            alert("Could not load Company");
+            alert("Could not load List Buku");
           });
         },
          alert(pesan) {
@@ -128,12 +128,12 @@ export default {
           });
         },
          deleteCompany(id, index,name) {
-          if (confirm("Yakin Ingin Menghapus Company "+name+" ?")) {
+          if (confirm("Yakin Ingin Menghapus List Buku "+name+" ?")) {
             var app = this;
             axios.delete(app.url+'/' + id)
             .then(function (resp) {
               app.getCompanies();
-              app.alert("Berhasil Menghapus Company "+name)
+              app.alert("Berhasil Menghapus List Buku "+name)
             })
             .catch(function (resp) {
               alert("Could not delete company");
